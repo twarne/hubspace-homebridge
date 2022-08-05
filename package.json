@@ -1,9 +1,9 @@
 {
   "private": true,
-  "displayName": "Plugin Name",
-  "name": "homebridge-plugin-name",
+  "displayName": "Hubspace Plugin",
+  "name": "homebridge-hubspace-plugin",
   "version": "1.0.0",
-  "description": "A short description about what your plugin does.",
+  "description": "Enables control of Hubspace accessories via Homebridge.",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -21,21 +21,32 @@
     "lint": "eslint src/**.ts --max-warnings=0",
     "watch": "npm run build && npm link && nodemon",
     "build": "rimraf ./dist && tsc",
-    "prepublishOnly": "npm run lint && npm run build"
+    "prepublishOnly": "npm run lint && npm run build",
+    "test": "jest"
   },
   "keywords": [
     "homebridge-plugin"
   ],
-  "dependencies": {},
   "devDependencies": {
+    "@types/jest": "^28.1.6",
     "@types/node": "^16.10.9",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.1",
     "homebridge": "^1.3.5",
+    "jest": "^28.1.3",
     "nodemon": "^2.0.13",
     "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.7",
     "ts-node": "^10.3.0",
     "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "base64url": "^3.0.1"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "singleQuote": true
   }
 }
